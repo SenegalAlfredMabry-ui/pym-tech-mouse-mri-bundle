@@ -36,6 +36,25 @@ series and 4D fMRI runs into the same subject/template/atlas coordinate system.
 QC scripts then summarize coverage, centroid behavior, and run-level metrics so
 the output is inspectable at scale rather than only one mouse at a time.
 
+## What the Output Looks Like
+
+**Allen atlas registration** — within-subject template (left) and the Allen parcels
+overlaid in the template's native space (right). The parcels are carried in through
+the same transform chain that handles every downstream alignment.
+
+![Allen atlas registration](docs/img/mouse_allen_registration.png)
+
+**Longitudinal alignment** — 100M3 across all three timepoints in template space.
+The coronal mid-slice view shows stable cortical and subcortical anatomy across
+6M, 9M, and 16M.
+
+![Longitudinal alignment](docs/img/longitudinal_alignment.png)
+
+**QC gates** — registration quality from `qc_landmarks_dice.tsv` for 100M3.
+Dice stays above 0.92 and landmark error stays below 0.09 mm at every timepoint.
+
+![QC gates](docs/img/qc_gates.png)
+
 ## Representative Entry Points
 
 These are good first files to read:
